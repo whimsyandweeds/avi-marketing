@@ -63,7 +63,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .cards-3, .cards-4 { display: grid; gap: 14px; margin-top: 32px; }
 .cards-3 { grid-template-columns: repeat(3, 1fr); }
 .cards-4 { grid-template-columns: 1.2fr 1fr 1fr; }
-.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.card { background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); border: 1px solid rgba(192,132,252,.35); border-radius: var(--radius); padding: 22px; backdrop-filter: blur(8px); }
 .card h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; margin: 10px 0 8px; }
 .card p, .sub { color: var(--text-secondary); font-size: 16px; line-height: 1.5; }
 .num { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: var(--violet-soft); color: var(--violet-icon); font-weight: 700; }

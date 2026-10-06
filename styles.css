@@ -232,7 +232,9 @@ body { scroll-snap-type: y mandatory; }
   .hero-right .lede { font-size: 16px; }
   h1 { font-size: 40px; }
   .kicker-row { gap: 6px; }
-  #locals { position: relative; }
+  #intake .page-bg { background-position: 62% center; }
+#intake .page-bg::after { background: linear-gradient(90deg, rgba(10,10,11,.82) 0%, rgba(10,10,11,.35) 42%, rgba(10,10,11,.2) 100%); }
+#intake .sub { color: #f5f2eb; text-shadow: 0 2px 12px rgba(0,0,0,.7); }
 .cut { position: absolute; right: 28px; bottom: 22px; z-index: 3; }
 .cut img { width: 28px; height: 28px; opacity: 0.75; }
 }

@@ -174,7 +174,18 @@ html { scroll-snap-type: y mandatory; }
 .hero-right .lede { margin-top: 0; }
 .hero.page { align-items: end; padding-bottom: 48px; }
 @media (max-width: 900px) {
-  .hero-copy { grid-template-columns: 1fr; }
-  .hero-right { justify-self: stretch; width: 100%; }
-  .hero.page { align-items: end; }
+  .nav { position: fixed; left: 0; right: 0; }
+  .page, .hero.page {
+    height: 100svh;
+    min-height: 100svh;
+    max-height: 100svh;
+    overflow: hidden;
+    align-items: end;
+    padding-top: 72px;
+    padding-bottom: 28px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .page > .wrap { max-height: calc(100svh - 96px); overflow: auto; }
+  footer { display: none; }
 }

@@ -85,7 +85,9 @@ function injectMobile() {
       .menu-btn { display: grid !important; place-items: center; }
       .mobile-panel { inset: 68px 14px auto; }
       .mobile-panel a { min-height: 48px; display: flex; align-items: center; font-size: 16px; }
-      .hero { min-height: 0 !important; padding: 28px 0 8px !important; align-items: start; }
+      .hero { min-height: 100svh !important; height: 100svh !important; padding: 72px 0 28px !important; align-items: end; }
+      .page { height: 100svh !important; min-height: 100svh !important; max-height: 100svh !important; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+      .page > .wrap { max-height: calc(100svh - 88px); overflow: auto; }
       h1 { font-size: 40px !important; }
       h2 { font-size: 32px !important; }
       .lede, .sub { font-size: 16px; }

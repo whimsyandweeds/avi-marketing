@@ -88,6 +88,8 @@ function injectMobile() {
       .hero { min-height: 100svh !important; height: 100svh !important; padding: 72px 0 28px !important; align-items: end; }
       .page { height: 100svh !important; min-height: 100svh !important; max-height: 100svh !important; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
       .page > .wrap { max-height: calc(100svh - 88px); overflow: auto; }
+      .hero-copy { display: flex !important; flex-direction: column !important; align-items: stretch !important; width: min(100% - 28px, 1180px) !important; }
+      .hero-left, .hero-right { width: 100% !important; }
       h1 { font-size: 40px !important; }
       h2 { font-size: 32px !important; }
       .lede, .sub { font-size: 16px; }

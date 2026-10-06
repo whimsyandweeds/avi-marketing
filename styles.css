@@ -192,5 +192,10 @@ html { scroll-snap-type: y mandatory; }
     scroll-snap-stop: always;
   }
   .page > .wrap { max-height: calc(100svh - 96px); overflow: auto; }
+  .hero-copy { display: flex; flex-direction: column; align-items: stretch; gap: 14px; width: min(100% - 28px, 1180px); }
+  .hero-left, .hero-right { width: 100%; justify-self: stretch; }
+  .hero-right .lede { font-size: 16px; }
+  h1 { font-size: 40px; }
+  .kicker-row { gap: 6px; }
   footer { display: none; }
 }

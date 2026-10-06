@@ -89,8 +89,9 @@ function injectMobile() {
       h1 { font-size: 40px !important; }
       h2 { font-size: 32px !important; }
       .lede, .sub { font-size: 16px; }
-      .hero-actions { display: grid; grid-template-columns: 1fr; }
-      .hero-actions .btn, .btn-wide { width: 100%; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+      .hero-actions .btn { width: auto; padding: 0 16px; }
+      .btn-wide { width: 100%; }
       .hero-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
       .film { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 16px; }
       .shot { flex: 0 0 78%; min-height: 160px; scroll-snap-align: start; }

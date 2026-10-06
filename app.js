@@ -1,11 +1,5 @@
-const FORMSPREE_VENDOR = ""; // paste https://formspree.io/f/xxxxx later
+const FORMSPREE_VENDOR = ""; // paste https://formspree.io/f/xxxxx
 const FORMSPREE_WAITLIST = "";
-
-const logoSvg = `
-<svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-  <path d="M32 8 L52 52 H44.5 L32 22 L19.5 52 H12 L32 8Z" stroke="#d4a574" stroke-width="2.2" fill="none"/>
-  <path d="M22 40 H42" stroke="#d4a574" stroke-width="2.2"/>
-</svg>`;
 
 function qs(sel, root = document) { return root.querySelector(sel); }
 function qsa(sel, root = document) { return [...root.querySelectorAll(sel)]; }
@@ -28,14 +22,7 @@ async function postLead(endpoint, payload) {
 }
 
 function serializeForm(form) {
-  const data = Object.fromEntries(new FormData(form).entries());
-  qsa(".checks input:checked", form).forEach((el) => {
-    const name = el.name;
-    if (!data[name]) data[name] = [];
-    if (!Array.isArray(data[name])) data[name] = [data[name]];
-    if (!data[name].includes(el.value)) data[name].push(el.value);
-  });
-  return data;
+  return Object.fromEntries(new FormData(form).entries());
 }
 
 function wireForm(form, bucket, endpoint) {
@@ -43,13 +30,13 @@ function wireForm(form, bucket, endpoint) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const payload = serializeForm(form);
+    const days = qsa(".day.on").map((d) => d.dataset.day).filter(Boolean);
+    if (days.length) payload.slow_days = days.join(",");
     saveLead(bucket, payload);
-    form.querySelector("button[type=submit]").disabled = true;
-    form.querySelector("button[type=submit]").textContent = "Sending…";
-    try {
-      await postLead(endpoint, payload);
-    } catch (_) { /* local save still succeeded */ }
-    form.classList.add("hidden");
+    const button = form.querySelector("button[type=submit]");
+    button.disabled = true;
+    button.textContent = "Sending…";
+    try { await postLead(endpoint, payload); } catch (_) {}
     form.style.display = "none";
     const success = form.parentElement.querySelector(".form-success");
     if (success) success.classList.add("show");
@@ -61,26 +48,20 @@ function wireMenu() {
   const panel = qs("[data-panel]");
   if (!btn || !panel) return;
   btn.addEventListener("click", () => {
-    const open = panel.style.display === "block";
-    panel.style.display = open ? "none" : "block";
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
   });
+  qsa("a", panel).forEach((a) => a.addEventListener("click", () => { panel.style.display = "none"; }));
 }
 
-function wireCities() {
-  qsa("[data-city]").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      qsa("[data-city]").forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-      const input = qs("[name=requested_city]");
-      if (input) input.value = chip.dataset.city;
-    });
+function wireDays() {
+  qsa(".day").forEach((day) => {
+    day.addEventListener("click", () => day.classList.toggle("on"));
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  qsa("[data-logo]").forEach((el) => { el.innerHTML = logoSvg; });
   wireMenu();
-  wireCities();
+  wireDays();
   wireForm(qs("[data-vendor-form]"), "vendors", FORMSPREE_VENDOR);
   wireForm(qs("[data-waitlist-form]"), "waitlist", FORMSPREE_WAITLIST);
 });

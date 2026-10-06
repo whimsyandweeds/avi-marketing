@@ -164,3 +164,17 @@ html { scroll-snap-type: y mandatory; }
   background-size: cover;
   background-position: center 12% !important;
 }
+.hero-copy {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px 40px;
+  align-items: end;
+}
+.hero-right { justify-self: end; width: min(420px, 100%); }
+.hero-right .lede { margin-top: 0; }
+.hero.page { align-items: end; padding-bottom: 48px; }
+@media (max-width: 900px) {
+  .hero-copy { grid-template-columns: 1fr; }
+  .hero-right { justify-self: stretch; width: 100%; }
+  .hero.page { align-items: end; }
+}

@@ -131,11 +131,11 @@ html { scroll-snap-type: y mandatory; }
 .page > .wrap, .page > .hero-copy { position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); }
 .hero.page { display: grid; align-items: end; padding: 108px 0 36px; }
 .page-bg, .hero-bg { position: absolute; inset: 0; background: #0a0a0b center/cover no-repeat; z-index: 0; }
-.page-bg::after, .hero-bg::after {
+.hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10,10,11,.9) 0%, rgba(10,10,11,.72) 48%, rgba(10,10,11,.42) 100%);
+  background: linear-gradient(90deg, rgba(10,10,11,.92) 0%, rgba(10,10,11,.55) 42%, rgba(10,10,11,.18) 100%);
 }
 .pager {
   position: fixed;

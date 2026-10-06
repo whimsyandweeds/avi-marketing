@@ -66,6 +66,47 @@ function wireMenu() {
   qsa("a", panel).forEach((a) => a.addEventListener("click", () => { panel.style.display = "none"; }));
 }
 
+function wirePin() {
+  const dial = qs("[data-dial]");
+  if (!dial) return;
+  const input = qs("[data-pin]", dial);
+  const list = qs("[data-pin-list]", dial);
+  const here = { lat: 36.1699, lon: -115.1398 };
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => { here.lat = pos.coords.latitude; here.lon = pos.coords.longitude; },
+      () => {},
+      { enableHighAccuracy: false, timeout: 4000 }
+    );
+  }
+  let timer;
+  const search = async () => {
+    const q = input.value.trim();
+    if (q.length < 3) { list.hidden = true; return; }
+    const url = "https://photon.komoot.io/api/?limit=5&lat=" + here.lat + "&lon=" + here.lon + "&q=" + encodeURIComponent(q);
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      const hits = data.features || [];
+      if (!hits.length) { list.hidden = true; return; }
+      list.innerHTML = hits.map((hit) => {
+        const p = hit.properties || {};
+        const title = p.name || [p.street, p.housenumber].filter(Boolean).join(" ");
+        const meta = [p.street, p.city, p.state].filter(Boolean).join(", ");
+        const label = [title, meta].filter(Boolean).join(", ");
+        return "<button type='button' data-label='" + label.replaceAll("'", "") + "'>" + title + "<small>" + meta + "</small></button>";
+      }).join("");
+      list.hidden = false;
+      qsa("button", list).forEach((btn) => btn.addEventListener("click", () => {
+        input.value = btn.dataset.label;
+        list.hidden = true;
+      }));
+    } catch (_) { list.hidden = true; }
+  };
+  input.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(search, 220); });
+  input.addEventListener("blur", () => setTimeout(() => { list.hidden = true; }, 180));
+}
+
 function wireOffer() {
   const dial = qs("[data-dial]");
   if (!dial) return;
@@ -176,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   wireMenu();
   wireDays();
   wireOffer();
+  wirePin();
   hideBrokenMedia();
   wireForm(qs("[data-vendor-form]"), "vendors", FORMSPREE_VENDOR);
   wireForm(qs("[data-waitlist-form]"), "waitlist", FORMSPREE_WAITLIST);

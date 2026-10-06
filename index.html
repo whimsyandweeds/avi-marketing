@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=custom" />
+  <link rel="stylesheet" href="styles.css?v=find" />
 </head>
 <body>
   <header class="nav">
@@ -92,7 +92,10 @@
         <p class="dial-read" data-read>Tue, Wed, Thu · 2:00–5:00 PM</p>
         <div class="field">
           <label>Exact location</label>
-          <input class="spot" data-pin placeholder="Where we send them. Address or drop a pin" />
+          <div class="pin-box">
+            <input class="spot" data-pin placeholder="Business or address. Closest hits first" autocomplete="off" />
+            <div class="pin-list" data-pin-list hidden></div>
+          </div>
         </div>
         <div class="field">
           <label>What kind of spot?</label>
@@ -169,6 +172,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=customoff"></script>
+  <script src="app.js?v=find"></script>
 </body>
 </html>

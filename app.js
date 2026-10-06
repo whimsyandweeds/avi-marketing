@@ -133,4 +133,35 @@ function wirePager() {
   window.addEventListener("scroll", mark, { passive: true });
   mark();
 }
-document.addEventListener("DOMContentLoaded", wirePager);
+function wireSnap() {
+  if (!window.matchMedia("(max-width: 900px)").matches) return;
+  const pages = () => [...document.querySelectorAll(".page")];
+  let timer;
+  let locked = false;
+  const nearest = () => {
+    const y = window.scrollY;
+    return pages().reduce((best, page) => {
+      const dist = Math.abs(page.offsetTop - y);
+      return dist < best.dist ? { page, dist } : best;
+    }, { page: pages()[0], dist: Infinity }).page;
+  };
+  const settle = () => {
+    if (locked) return;
+    const page = nearest();
+    if (!page || Math.abs(page.offsetTop - window.scrollY) < 8) return;
+    locked = true;
+    window.scrollTo({ top: page.offsetTop, behavior: "smooth" });
+    setTimeout(() => { locked = false; }, 450);
+  };
+  window.addEventListener("scroll", () => {
+    if (locked) return;
+    clearTimeout(timer);
+    timer = setTimeout(settle, 80);
+  }, { passive: true });
+  window.addEventListener("touchend", () => {
+    clearTimeout(timer);
+    timer = setTimeout(settle, 60);
+  }, { passive: true });
+}
+
+document.addEventListener("DOMContentLoaded", wireSnap);

@@ -118,6 +118,7 @@ img.is-broken, figure.is-broken, .frame.is-broken { display: none !important; }
 }
 
 html { scroll-snap-type: y mandatory; }
+body { scroll-snap-type: y mandatory; }
 .page {
   position: relative;
   min-height: 100vh;

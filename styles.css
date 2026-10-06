@@ -162,7 +162,12 @@ html { scroll-snap-type: y mandatory; }
 }
 .hero-bg {
   background-size: cover;
-  background-position: center 12% !important;
+  background-position: center 18% !important;
+}
+.hero-bg::after {
+  background:
+    linear-gradient(180deg, rgba(10,10,11,.2) 0%, rgba(10,10,11,.05) 38%, rgba(10,10,11,.72) 68%, rgba(10,10,11,.94) 100%),
+    linear-gradient(90deg, rgba(10,10,11,.78) 0%, rgba(10,10,11,.2) 46%, rgba(10,10,11,.35) 100%) !important;
 }
 .hero-copy {
   display: grid;

@@ -124,7 +124,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .locals { position: relative; border: 1px solid rgba(192,132,252,.35); border-radius: 28px; padding: 28px; overflow: hidden; background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); backdrop-filter: blur(8px); }
 .wrap.locals { width: min(420px, calc(100% - 40px)); max-width: 420px; margin-left: max(20px, calc((100% - 1120px) / 2)); margin-right: auto; padding: 22px; }
 .locals > * { position: relative; z-index: 1; }
-footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--text-secondary); font-size: 13px; }
+footer a { color: #c084fc; }
 .legal { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 img.is-broken, figure.is-broken, .frame.is-broken { display: none !important; }
 @media (max-width: 900px) {

@@ -30,8 +30,12 @@ function wireForm(form, bucket, endpoint) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const payload = serializeForm(form);
-    const days = qsa(".day.on").map((d) => d.dataset.day).filter(Boolean);
-    if (days.length) payload.slow_days = days.join(",");
+    const dial = qs("[data-dial]");
+    if (dial) {
+      payload.slow_days = qsa(".day.on", dial).map((d) => d.dataset.day).join(",");
+      payload.slow_from = qs("[data-from]", dial).value;
+      payload.slow_to = qs("[data-to]", dial).value;
+    }
     saveLead(bucket, payload);
     const button = form.querySelector("button[type=submit]");
     button.disabled = true;
@@ -54,9 +58,26 @@ function wireMenu() {
 }
 
 function wireDays() {
-  qsa(".day").forEach((day) => {
-    day.addEventListener("click", () => day.classList.toggle("on"));
-  });
+  const dial = qs("[data-dial]");
+  if (!dial) return;
+  const from = qs("[data-from]", dial);
+  const to = qs("[data-to]", dial);
+  const read = qs("[data-read]", dial);
+  const paint = () => {
+    const days = qsa(".day.on", dial).map((d) => d.dataset.day);
+    const fmt = (value) => {
+      const [h, m] = value.split(":").map(Number);
+      const hour = h % 12 || 12;
+      return hour + ":" + String(m).padStart(2, "0") + (h < 12 ? " AM" : " PM");
+    };
+    read.textContent = days.length
+      ? days.join(", ") + " · " + fmt(from.value) + "–" + fmt(to.value)
+      : "No days selected. AVI will not push.";
+  };
+  qsa(".day", dial).forEach((day) => day.addEventListener("click", () => { day.classList.toggle("on"); paint(); }));
+  from.addEventListener("change", paint);
+  to.addEventListener("change", paint);
+  paint();
 }
 
 function hideBrokenMedia() {

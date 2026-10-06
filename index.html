@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=nocontrol" />
+  <link rel="stylesheet" href="styles.css?v=dial" />
 </head>
 <body>
   <header class="nav">
@@ -73,10 +73,9 @@
           <article class="card"><div class="num">02</div><h3>Locals decide together</h3><p>Groups choose at the same time. Send the whole decision, not one random visit.</p></article>
         </div>
       </div>
-      <article class="card">
-        <div class="num">01</div>
-        <h3>Pick your dead hours</h3>
-        <p>You choose when you want fills. AVI only pushes then.</p>
+      <article class="card dial" data-dial>
+        <div class="dial-top"><h3>Pick your dead hours</h3><span class="pill"><span class="dot"></span>Live dial</span></div>
+        <p>Tap a day. Set the window. AVI only pushes then.</p>
         <div class="days" role="group" aria-label="Slow days">
           <button class="day" type="button" data-day="Mon">Mon</button>
           <button class="day on" type="button" data-day="Tue">Tue</button>
@@ -86,6 +85,11 @@
           <button class="day" type="button" data-day="Sat">Sat</button>
           <button class="day" type="button" data-day="Sun">Sun</button>
         </div>
+        <div class="window">
+          <label>From<input type="time" data-from value="14:00" /></label>
+          <label>To<input type="time" data-to value="17:00" /></label>
+        </div>
+        <p class="dial-read" data-read>Tue, Wed, Thu · 2:00–5:00 PM</p>
       </article>
     </div>
   </section>
@@ -133,6 +137,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=fit"></script>
+  <script src="app.js?v=dial"></script>
 </body>
 </html>

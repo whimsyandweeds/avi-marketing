@@ -160,3 +160,7 @@ html { scroll-snap-type: y mandatory; }
   .pager { right: 8px; }
   .page-bg::after, .hero-bg::after { background: linear-gradient(180deg, rgba(10,10,11,.55), rgba(10,10,11,.9)); }
 }
+.hero-bg {
+  background-size: cover;
+  background-position: center 12% !important;
+}

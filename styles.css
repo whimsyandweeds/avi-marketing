@@ -111,6 +111,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .form-card { background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); border: 1px solid rgba(192,132,252,.35); border-radius: 28px; padding: 22px; backdrop-filter: blur(8px); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.move-note[hidden], .deal-note[hidden], .pill-input[hidden], [hidden] { display: none !important; }
 .field label { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
 .field input, .field textarea { background: #101013; border: 1px solid var(--border); border-radius: 14px; padding: 13px 14px; outline: none; width: 100%; }
 .field textarea { min-height: 90px; resize: vertical; }

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=rows" />
+  <link rel="stylesheet" href="styles.css?v=fixed" />
 </head>
 <body>
   <header class="nav">
@@ -99,10 +99,16 @@
             <div class="pin-list" data-pin-list hidden></div>
           </div>
         </div>
-        <div class="field">
+        <div class="switch-row">
+          <div>
+            <strong>Normal spot</strong>
+            <p>A store that stays put. Turn off if you move.</p>
+          </div>
+          <button class="switch on" type="button" data-fixed aria-pressed="true"><span></span></button>
+        </div>
+        <div class="field move-note" hidden>
           <label>What kind of spot?</label>
           <div class="choices" role="group" aria-label="Location type">
-            <button class="choice on" type="button" data-place="Shop">Shop</button>
             <button class="choice" type="button" data-place="Truck">Food truck</button>
             <button class="choice" type="button" data-place="Market">Farmers market</button>
             <button class="choice" type="button" data-place="Stall">Stall</button>
@@ -175,6 +181,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=steps"></script>
+  <script src="app.js?v=fixed"></script>
 </body>
 </html>

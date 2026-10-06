@@ -35,9 +35,11 @@ function wireForm(form, bucket, endpoint) {
       payload.slow_days = qsa(".day.on", dial).map((d) => d.dataset.day).join(",");
       payload.slow_from = qs("[data-from]", dial).value;
       payload.slow_to = qs("[data-to]", dial).value;
-      const place = qs(".choices .choice.on", dial);
-      payload.place = place ? place.dataset.place : "";
-      payload.spot = qs("[data-spot]", dial).value;
+      const fixed = qs("[data-fixed]", dial);
+      const moving = fixed && !fixed.classList.contains("on");
+      const place = moving ? qs(".choice[data-place].on", dial) : null;
+      payload.place = moving && place ? place.dataset.place : "Shop";
+      payload.spot = moving ? qs("[data-spot]", dial).value : "";
       payload.pin = qs("[data-pin]", dial).value;
       const dealOn = qs("[data-deal]", dial).classList.contains("on");
       payload.deal = dealOn ? "yes" : "no";
@@ -110,6 +112,13 @@ function wirePin() {
 function wireOffer() {
   const dial = qs("[data-dial]");
   if (!dial) return;
+  const fixed = qs("[data-fixed]", dial);
+  const move = qs(".move-note", dial);
+  fixed.addEventListener("click", () => {
+    const on = fixed.classList.toggle("on");
+    fixed.setAttribute("aria-pressed", on ? "true" : "false");
+    move.hidden = on;
+  });
   qsa(".choice[data-place]", dial).forEach((choice) => {
     choice.addEventListener("click", () => {
       qsa(".choice[data-place]", dial).forEach((c) => c.classList.remove("on"));

@@ -136,6 +136,16 @@ function wirePager() {
 function wireSnap() {
   if (!window.matchMedia("(max-width: 900px)").matches) return;
   const pages = () => [...document.querySelectorAll(".page")];
+  const fit = () => {
+    const h = window.innerHeight;
+    pages().forEach((page) => {
+      page.style.height = h + "px";
+      page.style.minHeight = h + "px";
+      page.style.maxHeight = h + "px";
+    });
+  };
+  fit();
+  window.addEventListener("resize", fit);
   let timer;
   let locked = false;
   const nearest = () => {
@@ -146,21 +156,22 @@ function wireSnap() {
     }, { page: pages()[0], dist: Infinity }).page;
   };
   const settle = () => {
-    if (locked) return;
     const page = nearest();
-    if (!page || Math.abs(page.offsetTop - window.scrollY) < 8) return;
+    if (!page) return;
+    const top = page.offsetTop;
+    if (Math.abs(top - window.scrollY) < 2) return;
     locked = true;
-    window.scrollTo({ top: page.offsetTop, behavior: "smooth" });
-    setTimeout(() => { locked = false; }, 450);
+    window.scrollTo({ top, behavior: "smooth" });
+    setTimeout(() => { locked = false; }, 500);
   };
   window.addEventListener("scroll", () => {
     if (locked) return;
     clearTimeout(timer);
-    timer = setTimeout(settle, 80);
+    timer = setTimeout(settle, 120);
   }, { passive: true });
   window.addEventListener("touchend", () => {
     clearTimeout(timer);
-    timer = setTimeout(settle, 60);
+    timer = setTimeout(settle, 90);
   }, { passive: true });
 }
 

@@ -74,7 +74,9 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
 .frame { border-radius: 24px; overflow: hidden; border: 1px solid rgba(122, 44, 255, 0.4); min-height: 360px; background: #111; }
 .frame img { width: 100%; height: 100%; object-fit: cover; min-height: 360px; }
-.pulse { margin-top: 14px; color: #f5f2eb; font-size: 15px; max-width: 460px; }
+.row-card { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; }
+.row-card h3 { margin: 0 0 4px; font-size: 18px; }
+.row-card .num { flex: none; }
 .step span { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #7a2cff; color: #fff; font-size: 14px; box-shadow: 0 0 14px rgba(122,44,255,.5); }
 .help { width: 22px; height: 22px; margin-left: 8px; border-radius: 50%; border: 1px solid #c084fc; color: #c084fc; background: transparent; font-weight: 700; }
 .help-note { margin: 6px 0 0; color: #f5f2eb; font-size: 13px; }

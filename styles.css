@@ -107,7 +107,8 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .switch.on { background: #7a2cff; border-color: #c084fc; }
 .switch.on span { left: 25px; background: #fff; }
 .day { min-width: 52px; height: 40px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); background: var(--bg-surface); }
-.day.on { background: var(--violet-primary); color: white; border-color: transparent; }
+.step span, .row-card .num { border: 1px solid #c084fc; box-shadow: 0 0 12px rgba(192,132,252,.55); background: rgba(10,10,11,.72); }
+.day.on { background: rgba(10,10,11,.8); color: #fff; border-color: #c084fc; box-shadow: 0 0 14px rgba(192,132,252,.55); }
 .form-card { background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); border: 1px solid rgba(192,132,252,.35); border-radius: 28px; padding: 22px; backdrop-filter: blur(8px); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }

@@ -231,6 +231,6 @@ body { scroll-snap-type: y mandatory; }
   .hero-right .lede { font-size: 16px; }
   h1 { font-size: 40px; }
   .kicker-row { gap: 6px; }
-  .cut { position: absolute; right: 22px; bottom: 16px; z-index: 3; display: inline-flex; align-items: center; gap: 6px; color: #c084fc; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
-.cut img { width: 18px; height: 18px; opacity: 0.8; }
+  .cut { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; color: #8a8a94; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+.cut img { width: 16px; height: 16px; opacity: 0.7; }
 }

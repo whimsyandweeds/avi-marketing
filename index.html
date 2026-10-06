@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=slider" />
+  <link rel="stylesheet" href="styles.css?v=pin" />
 </head>
 <body>
   <header class="nav">
@@ -91,7 +91,11 @@
         </div>
         <p class="dial-read" data-read>Tue, Wed, Thu · 2:00–5:00 PM</p>
         <div class="field">
-          <label>Where do people find you?</label>
+          <label>Exact location</label>
+          <input class="spot" data-pin placeholder="Where we send them. Address or drop a pin" />
+        </div>
+        <div class="field">
+          <label>What kind of spot?</label>
           <div class="choices" role="group" aria-label="Location type">
             <button class="choice on" type="button" data-place="Shop">Shop</button>
             <button class="choice" type="button" data-place="Truck">Food truck</button>
@@ -99,7 +103,7 @@
             <button class="choice" type="button" data-place="Stall">Stall</button>
             <button class="choice" type="button" data-place="Event">Pop-up</button>
           </div>
-          <input class="spot" data-spot placeholder="Corner, stall, or market row" />
+          <input class="spot" data-spot placeholder="Stall, row, or truck name" />
         </div>
         <div class="switch-row">
           <div>
@@ -113,7 +117,7 @@
           <input class="range" type="range" min="5" max="30" step="5" value="15" data-range />
           <div class="range-ticks"><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span></div>
           <button class="choice" type="button" data-custom>Custom instead</button>
-          <textarea data-perk placeholder="2-for-1 item, free sticker, first drink on us" hidden></textarea>
+          <input class="pill-input" data-perk placeholder="2-for-1 item" hidden />
         </div>
       </article>
     </div>
@@ -161,6 +165,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=slider"></script>
+  <script src="app.js?v=pin"></script>
 </body>
 </html>

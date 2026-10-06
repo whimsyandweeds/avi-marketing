@@ -38,6 +38,7 @@ function wireForm(form, bucket, endpoint) {
       const place = qs(".choices .choice.on", dial);
       payload.place = place ? place.dataset.place : "";
       payload.spot = qs("[data-spot]", dial).value;
+      payload.pin = qs("[data-pin]", dial).value;
       const dealOn = qs("[data-deal]", dial).classList.contains("on");
       payload.deal = dealOn ? "yes" : "no";
       const customOn = qs("[data-custom]", dial).classList.contains("on");

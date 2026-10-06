@@ -82,7 +82,8 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .choice { min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(192,132,252,.35); color: #f5f2eb; background: rgba(10,10,11,.55); }
 .choice.on { background: #7a2cff; border-color: #c084fc; box-shadow: 0 0 16px rgba(122,44,255,.4); }
-.spot, .deal-note textarea { width: 100%; margin-top: 10px; background: rgba(10,10,11,.72); border: 1px solid rgba(192,132,252,.45); border-radius: 12px; padding: 10px 12px; color: #f5f2eb; }
+.spot, .pill-input { width: 100%; margin-top: 10px; background: rgba(10,10,11,.72); border: 1px solid rgba(192,132,252,.45); border-radius: 12px; padding: 10px 12px; color: #f5f2eb; }
+.pill-input { width: auto; min-width: 180px; border-radius: 999px; margin-left: 8px; }
 .range-label { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
 .range-label b { color: #c084fc; font-family: var(--font-display); }
 .range { width: 100%; accent-color: #7a2cff; margin-top: 8px; }

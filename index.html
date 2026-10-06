@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=hide" />
+  <link rel="stylesheet" href="styles.css?v=spot2" />
 </head>
 <body>
   <header class="nav">
@@ -93,20 +93,15 @@
         </div>
         <p class="dial-read" data-read>Tue, Wed, Thu · 2:00–5:00 PM</p>
         <div class="switch-row">
-          <div>
-            <strong>Normal spot</strong>
-            <p>A store that stays put. Turn off if you move.</p>
-          </div>
+          <h3 class="step"><span>2</span>Normal spot</h3>
           <button class="switch on" type="button" data-fixed aria-pressed="true"><span></span></button>
         </div>
-        <div class="field">
-          <h3 class="step"><span>2</span>Exact location</h3>
+        <div class="field move-note" hidden>
+          <h3 class="step">Exact location</h3>
           <div class="pin-box">
             <input class="spot" data-pin placeholder="Business or address. Closest hits first" autocomplete="off" />
             <div class="pin-list" data-pin-list hidden></div>
           </div>
-        </div>
-        <div class="field move-note" hidden>
           <label>What kind of spot?</label>
           <div class="choices" role="group" aria-label="Location type">
             <button class="choice" type="button" data-place="Truck">Food truck</button>

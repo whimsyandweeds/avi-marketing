@@ -232,7 +232,7 @@ body { scroll-snap-type: y mandatory; }
   .hero-left, .hero-right { width: 100%; justify-self: stretch; }
   .hero-right .lede { font-size: 16px; }
   h1 { font-size: 40px; }
-  .kicker-row { gap: 6px; }
+  .kicker-row { display: none; }
   #intake .page-bg { background-position: 62% center; }
 #intake .page-bg::after { background: linear-gradient(90deg, rgba(10,10,11,.82) 0%, rgba(10,10,11,.35) 42%, rgba(10,10,11,.2) 100%); }
 #intake .offer { display: inline-block; max-width: 420px; margin-top: 16px; padding: 12px 14px; border-radius: 16px; color: #f5f2eb; background: rgba(10,10,11,.82); border: 1px solid rgba(192,132,252,.45); }

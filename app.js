@@ -114,3 +114,18 @@ document.addEventListener("DOMContentLoaded", () => {
   wireForm(qs("[data-vendor-form]"), "vendors", FORMSPREE_VENDOR);
   wireForm(qs("[data-waitlist-form]"), "waitlist", FORMSPREE_WAITLIST);
 });
+
+function wirePager() {
+  const links = [...document.querySelectorAll(".pager a")];
+  const pages = [...document.querySelectorAll(".page")];
+  if (!links.length || !pages.length) return;
+  const mark = () => {
+    const y = window.scrollY + window.innerHeight * 0.35;
+    let current = pages[0].id;
+    pages.forEach((p) => { if (p.offsetTop <= y) current = p.id; });
+    links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + current));
+  };
+  window.addEventListener("scroll", mark, { passive: true });
+  mark();
+}
+document.addEventListener("DOMContentLoaded", wirePager);

@@ -116,3 +116,47 @@ img.is-broken, figure.is-broken, .frame.is-broken { display: none !important; }
   .field input, .field textarea { font-size: 16px; }
   .legal { flex-direction: column; }
 }
+
+html { scroll-snap-type: y mandatory; }
+.page {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.page > .wrap, .page > .hero-copy { position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); }
+.hero.page { display: grid; align-items: end; padding: 108px 0 36px; }
+.page-bg, .hero-bg { position: absolute; inset: 0; background: #0a0a0b center/cover no-repeat; z-index: 0; }
+.page-bg::after, .hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,10,11,.9) 0%, rgba(10,10,11,.72) 48%, rgba(10,10,11,.42) 100%);
+}
+.pager {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pager a {
+  width: 9px;
+  height: 9px;
+  border-radius: 99px;
+  border: 1px solid rgba(245,242,235,.55);
+  background: transparent;
+}
+.pager a:hover, .pager a.active { background: #c084fc; border-color: #c084fc; box-shadow: 0 0 12px rgba(192,132,252,.7); }
+@media (max-width: 900px) {
+  .page, .hero.page { min-height: 100dvh; align-items: center; padding-top: 78px; padding-bottom: 24px; }
+  .pager { right: 8px; }
+  .page-bg::after, .hero-bg::after { background: linear-gradient(180deg, rgba(10,10,11,.55), rgba(10,10,11,.9)); }
+}

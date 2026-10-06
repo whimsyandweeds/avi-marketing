@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=snap" />
 </head>
 <body>
   <header class="nav">
@@ -37,8 +37,18 @@
     <a href="#intake">Intake</a>
     <a href="#locals">I'm a local</a>
   </div>
-  <section class="hero">
-    <div class="hero-bg" role="img" aria-label="AVI neon mark in a concrete room"></div>
+  <nav class="pager" aria-label="Pages">
+    <a href="#top" aria-label="Landing"></a>
+    <a href="#problem" aria-label="Problem"></a>
+    <a href="#humans" aria-label="Match"></a>
+    <a href="#how" aria-label="How"></a>
+    <a href="#pricing" aria-label="Pricing"></a>
+    <a href="#control" aria-label="Control"></a>
+    <a href="#intake" aria-label="Intake"></a>
+    <a href="#locals" aria-label="Locals"></a>
+  </nav>
+  <section class="hero page" id="top">
+    <div class="hero-bg" style="background-image:url(assets/hero-room.jpg)" role="img" aria-label="AVI neon mark in a concrete room"></div>
     <div class="wrap hero-copy">
       <div class="kicker-row">
         <span class="pill"><span class="dot"></span>Secured · TEE</span>
@@ -57,14 +67,15 @@
         <div><b>6-8</b>crews, not clicks</div>
         <div><b>10s</b>counter tap</div>
       </div>
+      <div class="film">
+        <figure class="shot"><img src="assets/bar.jpg" alt="Black bar with the AVI neon mark" /><figcaption>The room, before the crew</figcaption></figure>
+        <figure class="shot"><img src="assets/rain.jpg" alt="Empty stools facing a rainy neon street" /><figcaption>Slow hour</figcaption></figure>
+        <figure class="shot"><img src="assets/tent.jpg" alt="Waiting on someone tent card" /><figcaption>Scan here</figcaption></figure>
+      </div>
     </div>
   </section>
-  <div class="wrap film">
-    <figure class="shot"><img src="assets/bar.jpg" alt="Black bar with the AVI neon mark" /><figcaption>The room, before the crew</figcaption></figure>
-    <figure class="shot"><img src="assets/rain.jpg" alt="Empty stools facing a rainy neon street" /><figcaption>Slow hour</figcaption></figure>
-    <figure class="shot"><img src="assets/tent.jpg" alt="Waiting on someone tent card" /><figcaption>Scan here</figcaption></figure>
-  </div>
-  <section class="section" id="problem">
+  <section class="section page" id="problem">
+    <div class="page-bg" style="background-image:url(assets/rain.jpg)"></div>
     <div class="wrap split">
       <div>
         <p class="eyebrow">The problem // slow hours kill margin</p>
@@ -78,7 +89,8 @@
       <figure class="frame"><img src="assets/rain.jpg" alt="Three empty stools and a POS" /></figure>
     </div>
   </section>
-  <section class="section" id="humans">
+  <section class="section page" id="humans">
+    <div class="page-bg" style="background-image:url(assets/map.jpg)"></div>
     <div class="wrap">
       <p class="eyebrow">We send the right humans</p>
       <h2>LOCAL PAIRS +<br><span class="violet">CREWS 6-8.</span></h2>
@@ -90,7 +102,8 @@
       </div>
     </div>
   </section>
-  <section class="section" id="how">
+  <section class="section page" id="how">
+    <div class="page-bg" style="background-image:url(assets/bar.jpg)"></div>
     <div class="wrap split">
       <figure class="frame"><img src="assets/tent.jpg" alt="AVI community partner tent card with QR" /></figure>
       <div>
@@ -102,7 +115,8 @@
       </div>
     </div>
   </section>
-  <section class="section" id="pricing">
+  <section class="section page" id="pricing">
+    <div class="page-bg" style="background-image:url(assets/vault.jpg)"></div>
     <div class="wrap">
       <p class="eyebrow">Core model · AVI venue partner</p>
       <h2>$0 UPFRONT.<br>POINTS ONLY <span class="violet">WHEN THEY SHOW.</span></h2>
@@ -118,7 +132,8 @@
       </div>
     </div>
   </section>
-  <section class="section" id="control">
+  <section class="section page" id="control">
+    <div class="page-bg" style="background-image:url(assets/roster.jpg)"></div>
     <div class="wrap split">
       <div>
         <p class="eyebrow">Venue control // you own the dial</p>
@@ -128,7 +143,7 @@
       <figure class="frame"><img src="assets/roster.jpg" alt="Live local business feed" /></figure>
     </div>
   </section>
-  <section class="section" id="intake">
+  <section class="section page" id="intake">
     <div class="wrap split">
       <div>
         <p class="eyebrow">60-second launch</p>
@@ -153,7 +168,8 @@
       </div>
     </div>
   </section>
-  <section class="section" id="locals">
+  <section class="section page" id="locals">
+    <div class="page-bg" style="background-image:url(assets/vegas.jpg)"></div>
     <div class="wrap locals">
       <p class="eyebrow">Not the venue? You're the local.</p>
       <h2>NOT A <span class="violet">VENUE?</span></h2>

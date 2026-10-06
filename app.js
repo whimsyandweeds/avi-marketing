@@ -57,6 +57,28 @@ function wireMenu() {
   qsa("a", panel).forEach((a) => a.addEventListener("click", () => { panel.style.display = "none"; }));
 }
 
+function wireOffer() {
+  const form = qs("[data-vendor-form]");
+  if (!form) return;
+  const placeInput = qs("[data-place-input]", form);
+  qsa(".choice", form).forEach((choice) => {
+    choice.addEventListener("click", () => {
+      qsa(".choice", form).forEach((c) => c.classList.remove("on"));
+      choice.classList.add("on");
+      placeInput.value = choice.dataset.place;
+    });
+  });
+  const deal = qs("[data-deal]", form);
+  const dealInput = qs("[data-deal-input]", form);
+  const note = qs(".deal-note", form);
+  deal.addEventListener("click", () => {
+    const on = deal.classList.toggle("on");
+    deal.setAttribute("aria-pressed", on ? "true" : "false");
+    dealInput.value = on ? "yes" : "no";
+    note.hidden = !on;
+  });
+}
+
 function wireDays() {
   const dial = qs("[data-dial]");
   if (!dial) return;
@@ -136,6 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   injectMobile();
   wireMenu();
   wireDays();
+  wireOffer();
   hideBrokenMedia();
   wireForm(qs("[data-vendor-form]"), "vendors", FORMSPREE_VENDOR);
   wireForm(qs("[data-waitlist-form]"), "waitlist", FORMSPREE_WAITLIST);

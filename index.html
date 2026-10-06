@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=dial" />
+  <link rel="stylesheet" href="styles.css?v=offer" />
 </head>
 <body>
   <header class="nav">
@@ -110,8 +110,30 @@
             <div class="field"><label>Phone *</label><input name="phone" required /></div>
             <div class="field"><label>Email *</label><input type="email" name="email" required /></div>
           </div>
-          <div class="field"><label>Neighborhood *</label><input name="neighborhood" required placeholder="Arts District, Fremont, Downtown" /></div>
-          <div class="field"><label>Optional perk note</label><textarea name="perk_note" placeholder="A welcome perk, or nothing"></textarea></div>
+          <div class="field">
+            <label>Where do people find you?</label>
+            <div class="choices" role="group" aria-label="Location type">
+              <button class="choice on" type="button" data-place="Shop">Shop</button>
+              <button class="choice" type="button" data-place="Truck">Food truck</button>
+              <button class="choice" type="button" data-place="Market">Farmers market</button>
+              <button class="choice" type="button" data-place="Stall">Stall</button>
+              <button class="choice" type="button" data-place="Event">Pop-up</button>
+            </div>
+            <input type="hidden" name="place" value="Shop" data-place-input />
+          </div>
+          <div class="field"><label>Neighborhood or corner *</label><input name="neighborhood" required placeholder="Arts District, Fremont, the Saturday market" /></div>
+          <div class="switch-row">
+            <div>
+              <strong>Offering a deal?</strong>
+              <p>Off by default. Turn it on only if a check-in gets something.</p>
+            </div>
+            <button class="switch" type="button" data-deal aria-pressed="false"><span></span></button>
+            <input type="hidden" name="deal" value="no" data-deal-input />
+          </div>
+          <div class="field deal-note" hidden>
+            <label>What do they get?</label>
+            <textarea name="perk_note" placeholder="10% off, a free sticker, a welcome pour"></textarea>
+          </div>
           <button class="btn btn-violet btn-wide" type="submit">Send to AVI</button>
           <p class="hint">Points only on check-in.</p>
         </form>
@@ -137,6 +159,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=dial"></script>
+  <script src="app.js?v=offer"></script>
 </body>
 </html>

@@ -79,7 +79,15 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .window { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
 .window label { display: grid; gap: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); }
 .window input { background: rgba(10,10,11,.72); border: 1px solid rgba(192,132,252,.45); border-radius: 12px; padding: 10px 12px; color: #f5f2eb; }
-.dial-read { margin: 12px 0 0; color: #c084fc; font-family: var(--font-display); font-size: 14px; letter-spacing: 0.02em; }
+.choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.choice { min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(192,132,252,.35); color: #f5f2eb; background: rgba(10,10,11,.55); }
+.choice.on { background: #7a2cff; border-color: #c084fc; box-shadow: 0 0 16px rgba(122,44,255,.4); }
+.switch-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 8px 0 14px; }
+.switch-row p { margin: 4px 0 0; color: var(--text-secondary); font-size: 13px; }
+.switch { width: 52px; height: 30px; border-radius: 999px; border: 1px solid rgba(192,132,252,.45); background: #141418; position: relative; flex: none; }
+.switch span { position: absolute; top: 3px; left: 3px; width: 22px; height: 22px; border-radius: 50%; background: #9a9aa9; transition: 0.15s ease; }
+.switch.on { background: #7a2cff; border-color: #c084fc; }
+.switch.on span { left: 25px; background: #fff; }
 .day { min-width: 52px; height: 40px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); background: var(--bg-surface); }
 .day.on { background: var(--violet-primary); color: white; border-color: transparent; }
 .form-card { background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); border: 1px solid rgba(192,132,252,.35); border-radius: 28px; padding: 22px; backdrop-filter: blur(8px); }

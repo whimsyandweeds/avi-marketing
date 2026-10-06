@@ -130,6 +130,9 @@ function wireOffer() {
     rangeWrap.hidden = on;
     if (on) box.focus();
   });
+  const help = qs("[data-help]", dial);
+  const helpNote = qs(".help-note", dial);
+  help.addEventListener("click", () => { helpNote.hidden = !helpNote.hidden; });
   deal.addEventListener("click", () => {
     const on = deal.classList.toggle("on");
     deal.setAttribute("aria-pressed", on ? "true" : "false");

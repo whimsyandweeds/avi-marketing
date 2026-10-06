@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=find" />
+  <link rel="stylesheet" href="styles.css?v=steps" />
 </head>
 <body>
   <header class="nav">
@@ -57,7 +57,7 @@
         <div class="hero-meta">
           <div><b>98%</b>vibe match</div>
           <div><b>6-8</b>groups, not clicks</div>
-          <div><b>10s</b>check-in</div>
+          <div><b>10s</b>tap in daily</div>
         </div>
       </div>
     </div>
@@ -74,7 +74,8 @@
         </div>
       </div>
       <article class="card dial" data-dial>
-        <div class="dial-top"><h3>Pick your dead hours</h3><span class="pill"><span class="dot"></span>Live dial</span></div>
+        <div class="dial-top"><p class="eyebrow">Tap in 10 seconds daily</p><span class="pill"><span class="dot"></span>Live dial</span></div>
+        <h3 class="step"><span>1</span>Pick your dead hours</h3>
         <p>Tap a day. Set the window. AVI only pushes then.</p>
         <div class="days" role="group" aria-label="Slow days">
           <button class="day" type="button" data-day="Mon">Mon</button>
@@ -91,7 +92,7 @@
         </div>
         <p class="dial-read" data-read>Tue, Wed, Thu · 2:00–5:00 PM</p>
         <div class="field">
-          <label>Exact location</label>
+          <h3 class="step"><span>2</span>Exact location</h3>
           <div class="pin-box">
             <input class="spot" data-pin placeholder="Business or address. Closest hits first" autocomplete="off" />
             <div class="pin-list" data-pin-list hidden></div>
@@ -111,7 +112,8 @@
         <div class="switch-row">
           <div>
             <strong>Customer enticement</strong>
-            <p>Off unless a check-in gets something.</p>
+            <button class="help" type="button" data-help aria-label="What is an enticement">?</button>
+            <p class="help-note" hidden>Optional. A reason to walk in. Off means they still get matched, just no perk.</p>
           </div>
           <button class="switch" type="button" data-deal aria-pressed="false"><span></span></button>
         </div>
@@ -172,6 +174,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=find"></script>
+  <script src="app.js?v=steps"></script>
 </body>
 </html>

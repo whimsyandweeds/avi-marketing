@@ -167,7 +167,6 @@ body { scroll-snap-type: y mandatory; }
 .page > .wrap, .page > .hero-copy { position: relative; z-index: 2; width: min(var(--max), calc(100% - 40px)); }
 .hero.page { display: grid; align-items: end; padding: 108px 0 36px; }
 .page-bg, .hero-bg { position: absolute; inset: 0; background: #0a0a0b center/cover no-repeat; z-index: 0; }
-video.page-bg { width: 100%; height: 100%; object-fit: cover; }
 .hero-bg::after {
   content: "";
   position: absolute;

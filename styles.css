@@ -77,7 +77,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .days { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .day { min-width: 52px; height: 40px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-secondary); background: var(--bg-surface); }
 .day.on { background: var(--violet-primary); color: white; border-color: transparent; }
-.form-card { background: var(--bg-card); border: 1px solid rgba(122, 44, 255, 0.4); border-radius: 28px; padding: 22px; }
+.form-card { background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); border: 1px solid rgba(192,132,252,.35); border-radius: 28px; padding: 22px; backdrop-filter: blur(8px); }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
 .field label { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }

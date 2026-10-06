@@ -81,10 +81,12 @@ function wireOffer() {
   const box = qs("[data-perk]", dial);
   const range = qs("[data-range]", dial);
   const pct = qs("[data-pct]", dial);
+  const rangeWrap = qs("[data-range-wrap]", dial);
   range.addEventListener("input", () => { pct.textContent = range.value + "%"; });
   custom.addEventListener("click", () => {
     const on = custom.classList.toggle("on");
     box.hidden = !on;
+    rangeWrap.hidden = on;
     if (on) box.focus();
   });
   deal.addEventListener("click", () => {

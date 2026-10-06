@@ -113,9 +113,11 @@
           <button class="switch" type="button" data-deal aria-pressed="false"><span></span></button>
         </div>
         <div class="deal-note" hidden>
-          <label class="range-label"><span>Percent off</span><b data-pct>15%</b></label>
-          <input class="range" type="range" min="5" max="30" step="5" value="15" data-range />
-          <div class="range-ticks"><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span></div>
+          <div data-range-wrap>
+            <label class="range-label"><span>Percent off</span><b data-pct>15%</b></label>
+            <input class="range" type="range" min="5" max="30" step="5" value="15" data-range />
+            <div class="range-ticks"><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span></div>
+          </div>
           <div class="custom-row">
             <button class="choice" type="button" data-custom>Custom instead</button>
             <input class="pill-input" data-perk placeholder="2-for-1 item" hidden />
@@ -167,6 +169,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=custom"></script>
+  <script src="app.js?v=customoff"></script>
 </body>
 </html>

@@ -120,7 +120,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .hint { color: var(--text-secondary); font-size: 14px; margin: 6px 0 16px; }
 .board-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 14px; }
 .locals { position: relative; border: 1px solid rgba(122, 44, 255, 0.35); border-radius: 28px; padding: 28px; overflow: hidden; background: rgba(10,10,11,.88); }
-.wrap.locals { width: min(520px, calc(100% - 40px)); margin-left: max(20px, calc((100% - 1120px) / 2)); margin-right: auto; }
+.wrap.locals { width: min(420px, calc(100% - 40px)); max-width: 420px; margin-left: max(20px, calc((100% - 1120px) / 2)); margin-right: auto; padding: 22px; }
 .locals > * { position: relative; z-index: 1; }
 footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--text-secondary); font-size: 13px; }
 .legal { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }

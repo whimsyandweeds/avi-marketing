@@ -69,9 +69,9 @@ function wireMenu() {
 function wireOffer() {
   const dial = qs("[data-dial]");
   if (!dial) return;
-  qsa(".choice", dial).forEach((choice) => {
+  qsa(".choice[data-place]", dial).forEach((choice) => {
     choice.addEventListener("click", () => {
-      qsa(".choice", dial).forEach((c) => c.classList.remove("on"));
+      qsa(".choice[data-place]", dial).forEach((c) => c.classList.remove("on"));
       choice.classList.add("on");
     });
   });
@@ -85,6 +85,7 @@ function wireOffer() {
   custom.addEventListener("click", () => {
     const on = custom.classList.toggle("on");
     box.hidden = !on;
+    if (on) box.focus();
   });
   deal.addEventListener("click", () => {
     const on = deal.classList.toggle("on");

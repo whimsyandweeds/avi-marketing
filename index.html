@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=pin" />
+  <link rel="stylesheet" href="styles.css?v=custom" />
 </head>
 <body>
   <header class="nav">
@@ -116,8 +116,10 @@
           <label class="range-label"><span>Percent off</span><b data-pct>15%</b></label>
           <input class="range" type="range" min="5" max="30" step="5" value="15" data-range />
           <div class="range-ticks"><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span></div>
-          <button class="choice" type="button" data-custom>Custom instead</button>
-          <input class="pill-input" data-perk placeholder="2-for-1 item" hidden />
+          <div class="custom-row">
+            <button class="choice" type="button" data-custom>Custom instead</button>
+            <input class="pill-input" data-perk placeholder="2-for-1 item" hidden />
+          </div>
         </div>
       </article>
     </div>
@@ -165,6 +167,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=pin"></script>
+  <script src="app.js?v=custom"></script>
 </body>
 </html>

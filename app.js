@@ -134,12 +134,15 @@ function wireOffer() {
   const pct = qs("[data-pct]", dial);
   const rangeWrap = qs("[data-range-wrap]", dial);
   range.addEventListener("input", () => { pct.textContent = range.value + "%"; });
+  custom.addEventListener("mousedown", (e) => e.preventDefault());
   custom.addEventListener("click", () => {
     const on = custom.classList.toggle("on");
     box.hidden = !on;
     rangeWrap.hidden = on;
-    if (on) box.focus();
+    if (on) setTimeout(() => box.focus(), 30);
   });
+  box.addEventListener("mousedown", (e) => e.stopPropagation());
+  box.addEventListener("click", (e) => e.stopPropagation());
   const help = qs("[data-help]", dial);
   const helpNote = qs(".help-note", dial);
   help.addEventListener("click", () => { helpNote.hidden = !helpNote.hidden; });

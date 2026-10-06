@@ -40,9 +40,9 @@ function wireForm(form, bucket, endpoint) {
       payload.spot = qs("[data-spot]", dial).value;
       const dealOn = qs("[data-deal]", dial).classList.contains("on");
       payload.deal = dealOn ? "yes" : "no";
-      const perk = qs(".deal-note .choice.on", dial);
-      payload.perk = perk ? perk.dataset.perk : "";
-      payload.perk_note = qs("[data-perk]", dial).value;
+      const customOn = qs("[data-custom]", dial).classList.contains("on");
+      payload.perk = customOn ? "custom" : qs("[data-range]", dial).value + "% off";
+      payload.perk_note = customOn ? qs("[data-perk]", dial).value : "";
     }
     saveLead(bucket, payload);
     const button = form.querySelector("button[type=submit]");
@@ -76,13 +76,14 @@ function wireOffer() {
   });
   const deal = qs("[data-deal]", dial);
   const note = qs(".deal-note", dial);
-  const custom = qs("[data-perk]", dial);
-  qsa(".deal-note .choice", dial).forEach((choice) => {
-    choice.addEventListener("click", () => {
-      qsa(".deal-note .choice", dial).forEach((c) => c.classList.remove("on"));
-      choice.classList.add("on");
-      custom.hidden = choice.dataset.perk !== "custom";
-    });
+  const custom = qs("[data-custom]", dial);
+  const box = qs("[data-perk]", dial);
+  const range = qs("[data-range]", dial);
+  const pct = qs("[data-pct]", dial);
+  range.addEventListener("input", () => { pct.textContent = range.value + "%"; });
+  custom.addEventListener("click", () => {
+    const on = custom.classList.toggle("on");
+    box.hidden = !on;
   });
   deal.addEventListener("click", () => {
     const on = deal.classList.toggle("on");

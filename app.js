@@ -194,8 +194,10 @@ function injectMobile() {
       .nav-inner { height: 60px; gap: 8px; }
       .brand { font-size: 12px; }
       .brand img { width: 34px; height: 34px; }
-      .nav-links, .nav-cta .btn { display: none !important; }
-      .menu-btn { display: grid !important; place-items: center; }
+      .nav-links { display: flex !important; gap: 6px; }
+      .nav-links a { min-height: 34px; padding: 0 12px; font-size: 13px; }
+      .nav-cta .btn { display: none !important; }
+      .menu-btn { display: none !important; }
       .mobile-panel { inset: 68px 14px auto; }
       .mobile-panel a { min-height: 48px; display: flex; align-items: center; font-size: 16px; }
       .hero { min-height: 100svh !important; height: 100svh !important; padding: 72px 0 28px !important; align-items: end; }

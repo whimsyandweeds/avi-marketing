@@ -130,8 +130,8 @@ img.is-broken, figure.is-broken, .frame.is-broken { display: none !important; }
 @media (max-width: 900px) {
   .wrap { width: min(100% - 28px, var(--max)); }
   .nav-inner { height: 60px; gap: 8px; }
-  .nav-links, .nav-cta .btn { display: none; }
-  .menu-btn { display: grid; place-items: center; }
+  .nav-links { display: flex; }
+  .nav-cta, .menu-btn { display: none; }
   .mobile-panel { inset: 68px 14px auto; }
   .mobile-panel a { min-height: 48px; display: flex; align-items: center; font-size: 16px; }
   .hero { min-height: 0; padding: 28px 0 12px; align-items: start; }

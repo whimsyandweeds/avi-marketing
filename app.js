@@ -1,5 +1,6 @@
-const FORMSPREE_VENDOR = "";
-const FORMSPREE_WAITLIST = "";
+const LEAD_INBOX = "whimsyandweeds@gmail.com";
+const FORMSPREE_VENDOR = "https://formsubmit.co/ajax/" + LEAD_INBOX;
+const FORMSPREE_WAITLIST = "https://formsubmit.co/ajax/" + LEAD_INBOX;
 
 function qs(sel, root = document) { return root.querySelector(sel); }
 function qsa(sel, root = document) { return [...root.querySelectorAll(sel)]; }

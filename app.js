@@ -35,9 +35,13 @@ function wireForm(form, bucket, endpoint) {
       payload.slow_days = qsa(".day.on", dial).map((d) => d.dataset.day).join(",");
       payload.slow_from = qs("[data-from]", dial).value;
       payload.slow_to = qs("[data-to]", dial).value;
-      const place = qs(".choice.on", dial);
+      const place = qs(".choices .choice.on", dial);
       payload.place = place ? place.dataset.place : "";
-      payload.deal = qs("[data-deal]", dial).classList.contains("on") ? "yes" : "no";
+      payload.spot = qs("[data-spot]", dial).value;
+      const dealOn = qs("[data-deal]", dial).classList.contains("on");
+      payload.deal = dealOn ? "yes" : "no";
+      const perk = qs(".deal-note .choice.on", dial);
+      payload.perk = perk ? perk.dataset.perk : "";
       payload.perk_note = qs("[data-perk]", dial).value;
     }
     saveLead(bucket, payload);
@@ -72,6 +76,14 @@ function wireOffer() {
   });
   const deal = qs("[data-deal]", dial);
   const note = qs(".deal-note", dial);
+  const custom = qs("[data-perk]", dial);
+  qsa(".deal-note .choice", dial).forEach((choice) => {
+    choice.addEventListener("click", () => {
+      qsa(".deal-note .choice", dial).forEach((c) => c.classList.remove("on"));
+      choice.classList.add("on");
+      custom.hidden = choice.dataset.perk !== "custom";
+    });
+  });
   deal.addEventListener("click", () => {
     const on = deal.classList.toggle("on");
     deal.setAttribute("aria-pressed", on ? "true" : "false");

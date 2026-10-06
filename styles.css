@@ -82,6 +82,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .choices { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .choice { min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(192,132,252,.35); color: #f5f2eb; background: rgba(10,10,11,.55); }
 .choice.on { background: #7a2cff; border-color: #c084fc; box-shadow: 0 0 16px rgba(122,44,255,.4); }
+.spot, .deal-note textarea { width: 100%; margin-top: 10px; background: rgba(10,10,11,.72); border: 1px solid rgba(192,132,252,.45); border-radius: 12px; padding: 10px 12px; color: #f5f2eb; }
 .switch-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 8px 0 14px; }
 .switch-row p { margin: 4px 0 0; color: var(--text-secondary); font-size: 13px; }
 .switch { width: 52px; height: 30px; border-radius: 999px; border: 1px solid rgba(192,132,252,.45); background: #141418; position: relative; flex: none; }

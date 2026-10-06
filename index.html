@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=dial2" />
+  <link rel="stylesheet" href="styles.css?v=entice" />
 </head>
 <body>
   <header class="nav">
@@ -99,17 +99,25 @@
             <button class="choice" type="button" data-place="Stall">Stall</button>
             <button class="choice" type="button" data-place="Event">Pop-up</button>
           </div>
+          <input class="spot" data-spot placeholder="Corner, stall, or market row" />
         </div>
         <div class="switch-row">
           <div>
-            <strong>Offering a deal?</strong>
+            <strong>Customer enticement</strong>
             <p>Off unless a check-in gets something.</p>
           </div>
           <button class="switch" type="button" data-deal aria-pressed="false"><span></span></button>
         </div>
-        <div class="field deal-note" hidden>
-          <label>What do they get?</label>
-          <textarea data-perk placeholder="10% off, a free sticker, a welcome pour"></textarea>
+        <div class="deal-note" hidden>
+          <div class="choices" role="group" aria-label="Enticement">
+            <button class="choice" type="button" data-perk="5% off">5%</button>
+            <button class="choice" type="button" data-perk="10% off">10%</button>
+            <button class="choice on" type="button" data-perk="15% off">15%</button>
+            <button class="choice" type="button" data-perk="20% off">20%</button>
+            <button class="choice" type="button" data-perk="30% off">30%</button>
+            <button class="choice" type="button" data-perk="custom">Custom</button>
+          </div>
+          <textarea data-perk placeholder="2-for-1 item, free sticker, first drink on us" hidden></textarea>
         </div>
       </article>
     </div>
@@ -157,6 +165,6 @@
     </div>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="partners.html">Venue intake</a></div></footer>
-  <script src="app.js?v=dial2"></script>
+  <script src="app.js?v=entice"></script>
 </body>
 </html>

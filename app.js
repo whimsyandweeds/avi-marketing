@@ -35,6 +35,10 @@ function wireForm(form, bucket, endpoint) {
       payload.slow_days = qsa(".day.on", dial).map((d) => d.dataset.day).join(",");
       payload.slow_from = qs("[data-from]", dial).value;
       payload.slow_to = qs("[data-to]", dial).value;
+      const place = qs(".choice.on", dial);
+      payload.place = place ? place.dataset.place : "";
+      payload.deal = qs("[data-deal]", dial).classList.contains("on") ? "yes" : "no";
+      payload.perk_note = qs("[data-perk]", dial).value;
     }
     saveLead(bucket, payload);
     const button = form.querySelector("button[type=submit]");
@@ -58,23 +62,19 @@ function wireMenu() {
 }
 
 function wireOffer() {
-  const form = qs("[data-vendor-form]");
-  if (!form) return;
-  const placeInput = qs("[data-place-input]", form);
-  qsa(".choice", form).forEach((choice) => {
+  const dial = qs("[data-dial]");
+  if (!dial) return;
+  qsa(".choice", dial).forEach((choice) => {
     choice.addEventListener("click", () => {
-      qsa(".choice", form).forEach((c) => c.classList.remove("on"));
+      qsa(".choice", dial).forEach((c) => c.classList.remove("on"));
       choice.classList.add("on");
-      placeInput.value = choice.dataset.place;
     });
   });
-  const deal = qs("[data-deal]", form);
-  const dealInput = qs("[data-deal-input]", form);
-  const note = qs(".deal-note", form);
+  const deal = qs("[data-deal]", dial);
+  const note = qs(".deal-note", dial);
   deal.addEventListener("click", () => {
     const on = deal.classList.toggle("on");
     deal.setAttribute("aria-pressed", on ? "true" : "false");
-    dealInput.value = on ? "yes" : "no";
     note.hidden = !on;
   });
 }

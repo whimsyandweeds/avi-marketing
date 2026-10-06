@@ -147,14 +147,22 @@
           <div class="grid-2">
             <div class="field"><label>Business name *</label><input name="business_name" required placeholder="The Bindery" /></div>
             <div class="field"><label>Contact name *</label><input name="contact_name" required /></div>
-            <div class="field"><label>Phone *</label><input name="phone" required /></div>
+            <div class="field"><label>Mobile *</label><input name="phone" type="tel" required placeholder="Text line" /></div>
             <div class="field"><label>Email *</label><input type="email" name="email" required /></div>
+          </div>
+          <div class="field">
+            <label>Market</label>
+            <input type="hidden" name="market" value="Las Vegas" data-market />
+            <div class="choices">
+              <button class="choice on" type="button" data-market-choice="Las Vegas">Las Vegas now</button>
+              <button class="choice" type="button" data-market-choice="Other city">Other city</button>
+            </div>
           </div>
           <div class="field"><label>Location *</label><input name="neighborhood" required placeholder="Arts District, Fremont, the Saturday market" /></div>
           <button class="btn btn-violet btn-wide" type="submit">Send to AVI</button>
           <p class="hint">Commission only on check-in.</p>
         </form>
-        <div class="form-success"><p class="eyebrow">Received</p><h3>QR kit is in the queue.</h3></div>
+        <div class="form-success" data-vendor-success><p class="eyebrow">Received</p><h3>QR kit is in the queue.</h3></div>
       </div>
     </div>
   </section>
@@ -177,6 +185,6 @@
     <a class="cut" href="https://whimsyandweeds.com" aria-label="Whimsy and Weeds"><span>Whimsy & Weeds<br>studio · cut to fit</span><img src="assets/whimsy.png" alt="" /></a>
   </section>
   <footer><div class="wrap legal"><span>© 2026 AVI · Invent LLC. We fill spaces. Not feeds.</span><a href="mailto:whimsyandweeds@gmail.com">Whimsy & Weeds · whimsyandweeds@gmail.com</a></div></footer>
-  <script src="app.js?v=nokick"></script>
+  <script src="app.js?v=market"></script>
 </body>
 </html>

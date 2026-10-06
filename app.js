@@ -55,7 +55,25 @@ function wireForm(form, bucket, endpoint) {
     try { await postLead(endpoint, payload); } catch (_) {}
     form.style.display = "none";
     const success = form.parentElement.querySelector(".form-success");
-    if (success) success.classList.add("show");
+    if (success) {
+      if (payload.market && payload.market !== "Las Vegas") {
+        success.innerHTML = "<p class='eyebrow'>Received</p><h3>You're on the list.</h3><p>Vegas ships first. We'll text when your city opens.</p>";
+      }
+      success.classList.add("show");
+    }
+  });
+}
+
+function wireMarket() {
+  const form = qs("[data-vendor-form]");
+  if (!form) return;
+  const field = qs("[data-market]", form);
+  qsa("[data-market-choice]", form).forEach((choice) => {
+    choice.addEventListener("click", () => {
+      qsa("[data-market-choice]", form).forEach((c) => c.classList.remove("on"));
+      choice.classList.add("on");
+      field.value = choice.dataset.marketChoice;
+    });
   });
 }
 
@@ -232,6 +250,7 @@ function injectMobile() {
 
 document.addEventListener("DOMContentLoaded", () => {
   injectMobile();
+  wireMarket();
   wireMenu();
   wireDays();
   wireOffer();

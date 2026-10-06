@@ -12,14 +12,14 @@
   --violet-soft: rgba(122, 44, 255, 0.16);
   --line: rgba(245, 242, 235, 0.08);
   --radius: 22px;
-  --font-display: "Syne", "Arial Black", sans-serif;
-  --font-body: "Outfit", system-ui, sans-serif;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --max: 1180px;
   --shadow-glow: 0 0 32px rgba(192, 132, 252, 0.28);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg-primary); color: var(--text-headline); font-family: var(--font-body); line-height: 1.55; overflow-x: hidden; }
+body { background: var(--bg-primary); color: var(--text-headline); font-family: var(--font-body); font-weight: 400; line-height: 1.4; overflow-x: hidden; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -45,9 +45,9 @@ button { cursor: pointer; border: 0; background: none; }
 .hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,11,.92), rgba(10,10,11,.28)); }
 .hero-copy { position: relative; z-index: 2; }
 .kicker-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.045em; line-height: 0.92; font-size: clamp(46px, 6.4vw, 86px); }
+h1 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; font-size: clamp(44px, 6vw, 72px); }
 h1 .violet, h2 .violet { color: var(--violet-icon); }
-.lede { margin-top: 22px; max-width: 540px; color: var(--text-secondary); font-size: 18px; }
+.lede { margin-top: 22px; max-width: 560px; color: var(--text-secondary); font-size: 20px; line-height: 1.4; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .hero-meta { display: flex; gap: 22px; margin-top: 32px; flex-wrap: wrap; }
 .hero-meta div { color: var(--text-secondary); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -58,14 +58,14 @@ h1 .violet, h2 .violet { color: var(--violet-icon); }
 .shot figcaption { position: absolute; left: 12px; bottom: 12px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
 .section { padding: 84px 0; }
 .eyebrow { color: var(--violet-icon); letter-spacing: 0.22em; text-transform: uppercase; font-size: 12px; margin-bottom: 12px; }
-h2 { font-family: var(--font-display); font-weight: 750; letter-spacing: -0.04em; line-height: 0.98; font-size: clamp(34px, 4.6vw, 62px); }
+h2 { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.08; font-size: clamp(32px, 4.4vw, 48px); }
 .sub { margin-top: 14px; color: var(--text-secondary); max-width: 640px; }
 .cards-3, .cards-4 { display: grid; gap: 14px; margin-top: 32px; }
 .cards-3 { grid-template-columns: repeat(3, 1fr); }
 .cards-4 { grid-template-columns: 1.2fr 1fr 1fr; }
 .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
-.card h3 { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.03em; margin: 10px 0 8px; }
-.card p { color: var(--text-secondary); font-size: 15px; }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; margin: 10px 0 8px; }
+.card p, .sub { color: var(--text-secondary); font-size: 16px; line-height: 1.5; }
 .num { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: var(--violet-soft); color: var(--violet-icon); font-weight: 700; }
 .feature { border-color: rgba(122, 44, 255, 0.45); }
 .price { font-family: var(--font-display); font-size: 56px; letter-spacing: -0.05em; line-height: 1; }
@@ -80,7 +80,7 @@ h2 { font-family: var(--font-display); font-weight: 750; letter-spacing: -0.04em
 .form-card { background: var(--bg-card); border: 1px solid rgba(122, 44, 255, 0.4); border-radius: 28px; padding: 22px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-.field label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-secondary); }
+.field label { font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
 .field input, .field textarea { background: #101013; border: 1px solid var(--border); border-radius: 14px; padding: 13px 14px; outline: none; width: 100%; }
 .field textarea { min-height: 90px; resize: vertical; }
 .form-success { display: none; padding: 36px 8px; text-align: center; }

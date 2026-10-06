@@ -77,7 +77,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .row-card { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; }
 .row-card h3 { margin: 0 0 4px; font-size: 18px; }
 .row-card .num { flex: none; }
-.step span { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #7a2cff; color: #fff; font-size: 14px; box-shadow: 0 0 14px rgba(122,44,255,.5); }
+.step span { width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; background: var(--violet-soft); color: var(--violet-icon); font-weight: 700; font-size: 13px; }
 .help { width: 22px; height: 22px; margin-left: 8px; border-radius: 50%; border: 1px solid #c084fc; color: #c084fc; background: transparent; font-weight: 700; }
 .help-note { margin: 6px 0 0; color: #f5f2eb; font-size: 13px; }
 .dial-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }

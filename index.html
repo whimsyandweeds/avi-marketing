@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=vegas" />
+  <link rel="stylesheet" href="styles.css?v=days" />
 </head>
 <body>
   <header class="nav">
@@ -17,7 +17,6 @@
       <a class="brand" href="index.html"><img src="assets/logo.jpg" alt="AVI" /></a>
       <nav class="nav-links">
         <a href="#problem">Problem</a>
-        <a href="#control">Slow hours</a>
         <a href="#intake">Intake</a>
       </nav>
       <div class="nav-cta">
@@ -29,14 +28,12 @@
   </header>
   <div class="mobile-panel" data-panel>
     <a href="#problem">Problem</a>
-    <a href="#control">Slow hours</a>
     <a href="#intake">Intake</a>
     <a href="#locals">I'm a local</a>
   </div>
   <nav class="pager" aria-label="Pages">
     <a href="#top" aria-label="Landing"></a>
     <a href="#problem" aria-label="Problem"></a>
-    <a href="#control" aria-label="Slow hours"></a>
     <a href="#intake" aria-label="Intake"></a>
     <a href="#locals" aria-label="Locals"></a>
   </nav>
@@ -66,38 +63,19 @@
     </div>
   </section>
   <section class="section page" id="problem">
-    <div class="page-bg" style="background-image:url(assets/rain.jpg)"></div>
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">The problem // slow hours kill margin</p>
-        <h2>EMPTY SPACES<br><span class="violet">ARE EXPENSIVE.</span></h2>
-        <div class="cards-3" style="grid-template-columns:1fr;margin-top:22px">
-          <article class="card"><div class="num">01</div><h3>Slow hours bleed labor</h3><p>You pay people to watch an empty room. Staff scheduled, no traffic, no sales, no energy.</p></article>
-          <article class="card"><div class="num">02</div><h3>Locals decide together</h3><p>Groups choose at the same time. Send the whole decision, not one random visit.</p></article>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="section page" id="control">
     <div class="page-bg" style="background-image:url(assets/roster.jpg)"></div>
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">Venue control // you own the dial</p>
-        <h2>YOU SET<br><span class="violet">THE SLOW.</span></h2>
-        <article class="card" style="margin-top:22px">
-          <div class="num">01</div>
-          <h3>Pick your dead hours</h3>
-          <p>You choose when you want fills. AVI only pushes then.</p>
-          <div class="days" role="group" aria-label="Slow days">
-            <button class="day" type="button" data-day="Mon">Mon</button>
-            <button class="day on" type="button" data-day="Tue">Tue</button>
-            <button class="day on" type="button" data-day="Wed">Wed</button>
-            <button class="day on" type="button" data-day="Thu">Thu</button>
-            <button class="day" type="button" data-day="Fri">Fri</button>
-            <button class="day" type="button" data-day="Sat">Sat</button>
-            <button class="day" type="button" data-day="Sun">Sun</button>
-          </div>
-        </article>
+    <div class="wrap">
+      <p class="eyebrow">You own the dial</p>
+      <h2>YOU SET<br><span class="violet">THE SLOW.</span></h2>
+      <p class="sub">Empty hours cost labor. Pick when you want fills. AVI only pushes then.</p>
+      <div class="days" role="group" aria-label="Slow days">
+        <button class="day" type="button" data-day="Mon">Mon</button>
+        <button class="day on" type="button" data-day="Tue">Tue</button>
+        <button class="day on" type="button" data-day="Wed">Wed</button>
+        <button class="day on" type="button" data-day="Thu">Thu</button>
+        <button class="day" type="button" data-day="Fri">Fri</button>
+        <button class="day" type="button" data-day="Sat">Sat</button>
+        <button class="day" type="button" data-day="Sun">Sun</button>
       </div>
     </div>
   </section>

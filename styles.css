@@ -45,7 +45,7 @@ button { cursor: pointer; border: 0; background: none; }
 .hero-bg { position: absolute; inset: 0; background: #0a0a0b center/cover no-repeat; }
 .hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,11,.92), rgba(10,10,11,.28)); }
 .hero-copy { position: relative; z-index: 2; }
-.kicker-row { display: none; }
+.kicker-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
 h1 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.04em; line-height: 0.98; font-size: clamp(46px, 6.2vw, 76px); }
 h1 .violet, h2 .violet { color: #c084fc; text-shadow: 0 0 24px rgba(192,132,252,.45); }
 .lede { margin-top: 22px; max-width: 560px; color: var(--text-secondary); font-size: 20px; line-height: 1.4; }

@@ -216,7 +216,9 @@ function injectMobile() {
       .nav-inner { height: 60px; gap: 8px; }
       .brand { font-size: 12px; }
       .brand img { width: 34px; height: 34px; }
-      .nav-links { display: none !important; }
+      .nav-links { display: flex !important; gap: 6px; }
+      .nav-links a { display: inline-flex !important; min-height: 34px; padding: 0 12px; font-size: 13px; }
+      .kicker-row { display: none !important; }
       .nav-cta .btn { display: none !important; }
       .menu-btn { display: none !important; }
       .mobile-panel { inset: 68px 14px auto; }

@@ -132,7 +132,8 @@ img.is-broken, figure.is-broken, .frame.is-broken { display: none !important; }
   .nav-inner { height: 60px; gap: 8px; }
   .nav-links { display: flex !important; gap: 6px; }
   .nav-links a { display: inline-flex !important; min-height: 34px; padding: 0 12px; font-size: 13px; }
-  .kicker-row { display: none !important; }
+  .kicker-row { display: flex !important; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .kicker-row .pill { font-size: 10px; padding: 5px 10px; }
   .nav-cta, .menu-btn { display: none; }
   .mobile-panel { inset: 68px 14px auto; }
   .mobile-panel a { min-height: 48px; display: flex; align-items: center; font-size: 16px; }

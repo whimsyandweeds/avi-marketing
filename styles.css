@@ -122,7 +122,7 @@ h2 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.035e
 .hint { color: var(--text-secondary); font-size: 14px; margin: 6px 0 16px; }
 .board-top { display: flex; justify-content: space-between; gap: 10px; align-items: center; margin-bottom: 14px; }
 .locals { position: relative; border: 1px solid rgba(192,132,252,.35); border-radius: 28px; padding: 28px; overflow: hidden; background: linear-gradient(180deg, rgba(16,16,20,.55), rgba(10,10,11,.38)); backdrop-filter: blur(8px); }
-.wrap.locals { width: min(420px, calc(100% - 40px)); max-width: 420px; margin-left: max(20px, calc((100% - 1120px) / 2)); margin-right: auto; padding: 22px; }
+.wrap.locals { width: min(380px, calc(100% - 40px)); max-width: 380px; margin-left: max(20px, calc((100% - 1120px) / 2)); margin-right: auto; padding: 22px; }
 .locals > * { position: relative; z-index: 1; }
 footer a { color: #c084fc; }
 .legal { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
@@ -229,8 +229,8 @@ video.page-bg, video.hero-bg { width: 100%; height: 100%; object-fit: cover; }
   .hero-left, .hero-right { width: 100%; justify-self: stretch; }
   .hero-right .lede { font-size: 16px; }
   h1 { font-size: 40px; }
-  #locals .page-bg { background-position: 82% 42%; }
-  #locals .wrap.locals { width: min(78%, 340px); max-width: 340px; margin-left: 14px; margin-right: auto; max-height: none; }
+  #locals .page-bg { background-position: 75% 40%; }
+  #locals .wrap.locals { width: min(68%, 300px); max-width: 300px; margin-left: 12px; margin-right: auto; max-height: none; }
   #intake .page-bg { background-position: 62% center; }
 #intake .page-bg::after { background: linear-gradient(90deg, rgba(10,10,11,.82) 0%, rgba(10,10,11,.35) 42%, rgba(10,10,11,.2) 100%); }
 #intake .offer { display: inline-block; max-width: 420px; margin-top: 16px; padding: 12px 14px; border-radius: 16px; color: #f5f2eb; background: rgba(10,10,11,.82); border: 1px solid rgba(192,132,252,.45); }
